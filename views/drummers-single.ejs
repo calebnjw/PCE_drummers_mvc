@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= drummer.id %>. <%= drummer.name %></title>
+  </head>
+  <body>
+    <h1><%= drummer.id %>. <%= drummer.name %></h1>
+    <h3>Current Reservations:</h3>
+    <div id="reservations"></div>
+    <h3>Make a reservation:</h3>
+    <form action="/reservations/<%= drummer.id %>" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" />
+      <label for="reservationDate">Date</label>
+      <input type="date" id="reservationDate" name="reservationDate" />
+      <input type="submit" name="submit" id="submit" value="Submit" />
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/script.js"></script>
+    <script>
+      showReservations(<%= drummer.id %>);
+    </script>
+  </body>
+</html>

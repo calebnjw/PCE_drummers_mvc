@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Drummers</title>
+  </head>
+  <body>
+    <% drummers.forEach((drummer) => { %>
+    <h3><a href="/drummers/<%= drummer.id %>"><%= drummer.id %>. <%= drummer.name %></a></h3>
+    <% }) %>
+  </body>
+</html>
