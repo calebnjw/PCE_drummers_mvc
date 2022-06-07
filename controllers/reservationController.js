@@ -43,7 +43,7 @@ class ReservationController extends BaseController {
 
     try {
       const reservations = await this.model.findAll({ where: { drummerId: id } });
-      console.log(reservations);
+
       response.send(reservations);
     } catch (error) {
       console.log(error);
@@ -67,7 +67,7 @@ class ReservationController extends BaseController {
         reservationDate: formattedDate,
       });
 
-      response.redirect('/reservations');
+      response.redirect(`/drummers/${id}`);
     } catch (error) {
       console.log(error);
     };
